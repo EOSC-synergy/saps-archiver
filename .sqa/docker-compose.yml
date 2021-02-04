@@ -1,0 +1,18 @@
+version: "3.6"
+
+services:
+  archiver-testing:
+    image: "maven:3-alpine"
+    container_name: archiver-testing
+    hostname: archiver-testing
+    volumes:
+     - type: bind
+       source: ./saps-archiver
+       target: /saps-archiver-repo
+     - type: bind
+       source: ./saps-catalog
+       target: /saps-catalog-repo
+     - type: bind
+       source: ./saps-common
+       target: /saps-common-repo
+    command: sleep 3600
