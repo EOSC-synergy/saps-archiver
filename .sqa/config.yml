@@ -1,0 +1,30 @@
+# .sqa/config.yml - jenkins-pipeline-library configuration file
+config:
+  project_repos:
+    saps-archiver:
+      repo: 'https://github.com/EOSC-synergy/saps-archiver'
+      branch: develop
+    saps-common:
+      repo: 'https://github.com/EOSC-synergy/saps-common'
+      branch: develop
+    saps-catalog:
+      repo: 'https://github.com/EOSC-synergy/saps-catalog'
+      branch: develop
+
+sqa_criteria:
+   qc_style:
+     repos:
+       saps-archiver:
+         container: archiver-testing
+         commands:
+         # saps-archiver has saps-common and saps-catalog as dependences and must be installed
+           - mvn -f /saps-common-repo/pom.xml install
+           - mvn -f /saps-catalog-repo/pom.xml install
+           - mvn -f /saps-archiver-repo/pom.xml checkstyle:checkstyle
+   qc_coverage:
+     repos:
+       saps-archiver:
+         container: archiver-testing
+         commands:
+           - mvn -f /saps-archiver-repo/pom.xml -B -DskipTests clean package
+           - mvn -f /saps-archiver-repo/pom.xml test
