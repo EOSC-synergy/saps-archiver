@@ -28,3 +28,10 @@ sqa_criteria:
          commands:
            - mvn -f /saps-archiver-repo/pom.xml -B -DskipTests clean package
            - mvn -f /saps-archiver-repo/pom.xml test
+    qc_doc:
+     repos:
+       saps-archiver:
+         container: archiver-docs
+         commands:
+           - sphinx-quickstart
+           - make html 
