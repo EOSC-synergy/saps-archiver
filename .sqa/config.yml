@@ -21,6 +21,7 @@ sqa_criteria:
            - mvn -f /saps-common-repo/pom.xml install
            - mvn -f /saps-catalog-repo/pom.xml install
            - mvn -f /saps-archiver-repo/pom.xml checkstyle:checkstyle
+           
    qc_coverage:
      repos:
        saps-archiver:
@@ -28,7 +29,8 @@ sqa_criteria:
          commands:
            - mvn -f /saps-archiver-repo/pom.xml -B -DskipTests clean package
            - mvn -f /saps-archiver-repo/pom.xml test
-    qc_doc:
+           
+   qc_doc:
      repos:
        saps-archiver:
          container: archiver-docs
