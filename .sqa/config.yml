@@ -33,5 +33,4 @@ sqa_criteria:
        saps-archiver:
          container: archiver-docs
          commands:
-           - sphinx-quickstart
            - make html 
