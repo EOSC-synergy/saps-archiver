@@ -16,3 +16,13 @@ services:
        source: ./saps-common
        target: /saps-common-repo
     command: sleep 3600
+
+  archiver-docs:
+    image: "sphinxdoc/sphinx"
+    container_name: archiver-docs
+    hostname: archiver-docs
+    volumes:
+     - type: bind
+       source: ./saps-archiver
+       target: /saps-archiver-repo
+    command: sleep 3600
