@@ -35,5 +35,4 @@ sqa_criteria:
        saps-archiver:
          container: archiver-docs
          commands:
-           - make --help
-           - make html /saps-archiver-repo/docs/  #-f /saps-archiver-repo/docs
+           - make html -C /saps-archiver-repo/docs/
