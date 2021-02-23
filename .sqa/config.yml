@@ -35,5 +35,4 @@ sqa_criteria:
        saps-archiver:
          container: archiver-docs
          commands:
-           - export BUILDDIR=/saps-archiver-repo/docs/
-           - make html #-f /saps-archiver-repo/docs
+           - cd /saps-archiver-repo/docs/ && make html #-f /saps-archiver-repo/docs
