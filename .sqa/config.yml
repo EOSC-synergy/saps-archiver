@@ -35,4 +35,5 @@ sqa_criteria:
        saps-archiver:
          container: archiver-docs
          commands:
+           - pip install recommonmark
            - make html -C /saps-archiver-repo/docs/
