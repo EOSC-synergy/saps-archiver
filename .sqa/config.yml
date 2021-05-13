@@ -37,3 +37,10 @@ sqa_criteria:
          commands:
            - pip install recommonmark
            - make html -C /saps-archiver-repo/docs/
+
+   qc_security:
+     repos:
+       saps-scheduler:
+         container: archiver-testing
+         commands:
+           - mvn -f /saps-archiver-repo/pom.xml -B -DskipTests clean package com.github.spotbugs:spotbugs-maven-plugin:check
